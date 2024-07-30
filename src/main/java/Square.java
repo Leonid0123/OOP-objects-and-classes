@@ -1,25 +1,23 @@
 public class Square {
-    private int x;
-    private int y;
+    private final Point point;
     private int sideLength;
 
     public Square(int x, int y, int sideLength) {
-        this.setX(x);
-        this.setY(y);
+        this.point = new Point(x, y);
         this.setSideLength(sideLength);
     }
 
     @Override
     public String toString() {
-        return "Квадрат в точке {" + x + "," + y + "} со стороной " + sideLength;
+        return "Квадрат в точке " + point + " со стороной " + sideLength;
     }
 
     public void setX(int x) {
-        this.x = x;
+        this.point.setX(x);
     }
 
     public void setY(int y) {
-        this.y = y;
+        this.point.setY(y);
     }
 
     public void setSideLength(int sideLength) {
