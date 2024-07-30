@@ -1,36 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        List<Point> points = new ArrayList<>(); //1. Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
-        points.add(new Point(1, 5));
-        points.add(new Point(2, 8));
-        points.add(new Point(5, 3));
-        points.add(new Point(8, 9));
-        PolyLine polyLine = new PolyLine(points);
+        City A = new City("A");
+        City B = new City("B");
+        City C = new City("C");
+        City D = new City("D");
+        City E = new City("E");
+        City F = new City("F");
 
-        double brokenLineLength = polyLine.getLength(); //2. Рассчитать длину Ломаной
-        System.out.println("Длина ломаной: " + brokenLineLength);
-        List<Line> arrayOfLines = polyLine.getLines(); //3. Получить у Ломаной массив Линий
-        System.out.println("Массив линий: " + arrayOfLines);
+        A.addWay(F, 1);
+        A.addWay(B, 5);
+        A.addWay(D, 6);
 
-        double arrayOfLinesLength=0; //4. Рассчитать длину массива Линий
-        for (Line line : arrayOfLines) {
-            arrayOfLinesLength = arrayOfLinesLength + line.getLength();
-        }
-        System.out.println("Длина массива линий: " + arrayOfLinesLength);
+        B.addWay(C, 3);
+        B.addWay(A, 5);
 
-        System.out.println("Длина ломаной и массива линий равны? " + (brokenLineLength == arrayOfLinesLength)); //5. Сравнить длину Ломаной и массива Линий: они должны совпасть
-        System.out.println("Изменяемая точка до изменений: " + points.get(1)); //6. Изменить координаты Точки {2,8} таким образом, чтобы она стала иметь значение {12,8}.
-        System.out.println("Изменяемая ломаная до изменений: " + polyLine);
-        System.out.println("Изменяемый массив до изменений: " + arrayOfLines);
-        if (points.get(1).getX() == 2 && points.get(1).getY() == 8) {
-            points.get(1).setX(12);
-            points.get(1).setY(8);
-        }
-        System.out.println("Изменяемая точка после изменений: " + points.get(1)); //Если изменения отразились в данной точке,
-        System.out.println("Изменяемая ломаная после изменений: " + polyLine); //в Ломаной
-        System.out.println("Изменяемый массив после изменений: " + arrayOfLines); //и в двух Линиях массива (из пункта 3), то задача решена верно.
+        C.addWay(D, 4);
+        C.addWay(B, 3);
+
+        D.addWay(A, 6);
+        D.addWay(E, 2);
+        D.addWay(C, 4);
+
+        F.addWay(E, 2);
+        F.addWay(B, 1);
+
+        int n = 3; //количество переходов
+        City destination = B.travelBy(n);
+        if (destination != null)
+            System.out.println("Путешествие из города " + B.getName() + " в город " + destination.getName() + " за количество переходов равное " + n);
     }
 }
