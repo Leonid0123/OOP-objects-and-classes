@@ -30,8 +30,6 @@ public class Student {
     }
 
     public List<Integer> getGrades() {
-        List<Integer> newGrades = new ArrayList<>();
-        newGrades.addAll(this.grades);
-        return newGrades;
+        return new ArrayList<>(this.grades);
     }
 }
