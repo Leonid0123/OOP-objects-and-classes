@@ -1,24 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        Department dep0 = new Department("Отдел обеспечения качества", new Employee("Игнат"));
-        System.out.println(dep0);
-        System.out.println(dep0.getBoss());
-        dep0.setBoss(new Employee("Андрей"));
-        dep0.getBoss().setDepartment(new Department("Отдел DevOps", new Employee("Кирилл"))); 
+        //создание отдела с начальником. попытка изменить начальника отдела и попытка изменить отдел у начальника
+        Department qaDep = new Department("Отдел обеспечения качества");
+        qaDep.setBoss(new Employee("Игнат"));
+        System.out.println(qaDep);
+        System.out.println(qaDep.getBoss());
+        qaDep.setBoss(new Employee("Андрей")); //проверка, возможно ли изменить начальника отдела
+        qaDep.getBoss().setDepartment(new Department("Отдел DevOps")); //проверка, возможно ли изменить отдел у начальника
 
+        //создание отдела с начальником. создание отдельного работника и зачисление его в ранее созданный отдел
+        Department devDep = new Department("Отдел разработки");
         Employee employee1 = new Employee("Иван");
-        System.out.println(employee1);
-
-        Department department2 = new Department("Отдел разработки", employee1);
-        Employee employee2 = new Employee("Сергей", department2);
+        devDep.setBoss(employee1);
+        Employee employee2 = new Employee("Сергей");
+        employee2.setDepartment(devDep);
         System.out.println(employee2);
-        department2.setBoss(new Employee("Захар"));
-
-        Department department1 = new Department("Отдел разработки", employee1);
-        employee1.setDepartment(department1);
-        System.out.println(employee1);
     }
 }

@@ -1,18 +1,12 @@
 public class Department {
-    private String name;
+    private final String name;
     private Employee boss;
 
-    public Department(String name, Employee boss) {
-        this.setDepName(name);
-        this.setBoss(boss);
-    }
-
-    @Override
-    public String toString() {
-         return "Department{" +
-                "name='" + name + '\'' +
-                ", boss=" + boss +
-                '}';
+    public Department(String name) {
+        if (name != null)
+            this.name = name;
+        else
+            throw new IllegalArgumentException("Значение имени отдела не может быть равным Null. Укажите корректное значение.");
     }
 
     public String getDepName() {
@@ -20,15 +14,20 @@ public class Department {
     }
 
     public Employee getBoss() {
-        return boss;
-    }
-
-    public void setDepName(String name) {
-        this.name = name;
+        if (boss != null)
+            return boss;
+        else
+            throw new IllegalArgumentException("Значение начальника отдела не может быть равным Null. Укажите корректное значение.");
     }
 
     public void setBoss(Employee boss) {
-        this.boss = new Employee(boss.getName(), boss.getDepartment());
-        this.getBoss().setDepartment(this);
+        if (boss == null)
+            throw new IllegalArgumentException("Значение начальника отдела не может быть равным Null. Укажите корректное значение.");
+        else if (this.boss == null) {
+            this.boss = new Employee(boss.getName());
+            this.getBoss().setDepartment(this);
+        } else {
+            System.out.println("Отдел уже имеет начальника - " + this.getBoss());
+        }
     }
 }
