@@ -3,7 +3,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Point3D point = new Point3D(1,2,3);
-        System.out.println(point);
+        List<Point> points = new ArrayList<>(); //1. Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
+        points.add(new Point(1, 5));
+        points.add(new Point(2, 8));
+        points.add(new Point(5, 3));
+        points.add(new Point(8, 9));
+        PolyLine polyLine = new PolyLine(points);
+        ClosedPolyLine closedPolyLine = new ClosedPolyLine(points);
+
+        double res1 = polyLine.getLength();
+        double res2 = closedPolyLine.getLength();
+        System.out.println("Длина ломаной линии: " + res1);
+        System.out.println("Длина замкнутой ломаной линии: " + res2);
     }
 }
