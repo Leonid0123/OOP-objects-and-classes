@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PolyLine {
-    private List<Point> polyLine = new ArrayList<>();
-
-    public PolyLine() {
-    }
+    final private List<Point> polyLine;
 
     public PolyLine(List<Point> pointList) {
         this.polyLine = pointList;
+    }
+
+    public List<Point> getPolyLine() {
+        return polyLine;
     }
 
     @Override
