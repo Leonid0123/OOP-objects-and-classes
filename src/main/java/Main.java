@@ -1,24 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        Student s1 = new Student("Витя"); //создание студента без набора оценок
-        System.out.println(s1);
-        s1.setGrades(4);
-        s1.setGrades(3);
-        s1.setGrades(5);
-        System.out.println(s1);
+        //создание отдела с начальником. попытка изменить начальника отдела и попытка изменить отдел у начальника
+        Department qaDep = new Department("Отдел обеспечения качества");
+        qaDep.setBoss(new Employee("Игнат"));
+        System.out.println(qaDep);
+        System.out.println(qaDep.getBoss());
+        qaDep.setBoss(new Employee("Андрей")); //проверка, возможно ли изменить начальника отдела
+        qaDep.getBoss().setDepartment(new Department("Отдел DevOps")); //проверка, возможно ли изменить отдел у начальника
 
-        List<Integer> gradesS2 = new ArrayList<>(); //создание списка оценок и создание студента с набором оценок
-        gradesS2.add(3);
-        gradesS2.add(5);
-        gradesS2.add(4);
-        gradesS2.add(2);
-        Student s2 = new Student("Оля", gradesS2);
-        System.out.println(s2);
-        s2.getGrades().clear();
-        System.out.println(s2);
-        s2.setGrades(2);
+        //создание отдела с начальником. создание отдельного работника и зачисление его в ранее созданный отдел
+        Department devDep = new Department("Отдел разработки");
+        Employee employee1 = new Employee("Иван");
+        devDep.setBoss(employee1);
+        Employee employee2 = new Employee("Сергей");
+        employee2.setDepartment(devDep);
+        System.out.println(employee2);
     }
 }
