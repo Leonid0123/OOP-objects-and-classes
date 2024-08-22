@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class PolyLine {
+public class PolyLine implements Measurable {
     final private List<Point> polyLine;
 
     public PolyLine(List<Point> pointList) {
