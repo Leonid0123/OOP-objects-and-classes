@@ -1,13 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        Fraction f1 = new Fraction(1, 3);
-        Fraction f2 = new Fraction(2, 5);
-        Fraction f3 = new Fraction(7, 8);
-
-        System.out.println(f1.sum(f2).sum(f3).minus(5));
-        System.out.println(f1.intValue());
-        System.out.println(f1.longValue());
-        System.out.println(f1.floatValue());
-        System.out.println(f1.doubleValue());
+        Number[] example1 = {2, new Fraction(3,5), 2.3};
+        Number[] example2 = {3.6, new Fraction(49,12), 3, new Fraction(3,2)};
+        Number[] example3 = {new Fraction(1,3), 1};
+        System.out.println("2 + 3/5 + 2.3 = " + Fraction.sumAll(example1));
+        System.out.println("3.6 + 49/12 + 3 + 3/2 = " + Fraction.sumAll(example2));
+        System.out.println("1/3 + 1 = " + Fraction.sumAll(example3));
     }
 }
