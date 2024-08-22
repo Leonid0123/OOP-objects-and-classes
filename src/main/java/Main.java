@@ -10,13 +10,16 @@ public class Main {
         points.add(new Point(8, 9));
         PolyLine polyLine = new PolyLine(points);
         ClosedPolyLine closedPolyLine = new ClosedPolyLine(points);
+        StringMeasurable str = new StringMeasurable("Пример строки");
 
         double res1 = polyLine.getLength();
         double res2 = closedPolyLine.getLength();
+        double res3 = str.getLength();
         System.out.println("Длина ломаной линии: " + res1);
         System.out.println("Длина замкнутой ломаной линии: " + res2);
+        System.out.println("Длина строки: " + res3);
 
-        Measurable[] measurable = {polyLine,closedPolyLine};
+        Measurable[] measurable = {polyLine, closedPolyLine, str};
         double totalLength = LengthCalculator.sumLength(measurable);
         System.out.println("Общая длина: " + totalLength);
     }
