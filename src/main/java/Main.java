@@ -15,5 +15,9 @@ public class Main {
         double res2 = closedPolyLine.getLength();
         System.out.println("Длина ломаной линии: " + res1);
         System.out.println("Длина замкнутой ломаной линии: " + res2);
+
+        Measurable[] measurable = {polyLine,closedPolyLine};
+        double totalLength = LengthCalculator.sumLength(measurable);
+        System.out.println("Общая длина: " + totalLength);
     }
 }
