@@ -5,5 +5,9 @@ public class Main {
         Fraction f3 = new Fraction(7, 8);
 
         System.out.println(f1.sum(f2).sum(f3).minus(5));
+        System.out.println(f1.intValue());
+        System.out.println(f1.longValue());
+        System.out.println(f1.floatValue());
+        System.out.println(f1.doubleValue());
     }
 }
