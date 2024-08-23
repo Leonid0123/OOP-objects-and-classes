@@ -1,11 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        CoordinatePoint point1 = new CoordinatePoint.CoordinatePointBuilder(3).setPointColour("red").build();
-        CoordinatePoint point2 = new CoordinatePoint.CoordinatePointBuilder(4).setY(2).setZ(5).setPointCreationTime("11:00").build();
-        CoordinatePoint point3 = new CoordinatePoint.CoordinatePointBuilder(7).setY(7).setPointCreationTime("15:35").setPointColour("yellow").build();
+        Student student1 = new Student("Igor", grade -> grade >= 0 && grade <= 5);
+        Student student2 = new Student("Oleg", grade -> grade % 2 == 0 && grade >= 1 && grade <= 100000);
 
-        System.out.println(point1);
-        System.out.println(point2);
-        System.out.println(point3);
+        student1.addGrade(4); //оценка добавлена успешно
+        student1.addGrade(6); //оценка не добавлена
+        student1.addGrade(5); //оценка добавлена
+        System.out.println(student1);
+
+        student2.addGrade(8); //оценка добавлена успешно
+        student2.addGrade(7); //оценка не добавлена
+        student2.addGrade(100000); //оценка добавлена
+        System.out.println(student2);
     }
 }
