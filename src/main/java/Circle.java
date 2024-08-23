@@ -1,4 +1,4 @@
-public class Circle extends Figure{
+public class Circle extends Figure {
     private final double radius;
 
     public Circle(double startX, double startY, double radius) {
@@ -8,6 +8,6 @@ public class Circle extends Figure{
 
     @Override
     public double getArea() {
-        return Math.PI*Math.pow(radius,2);
+        return Math.PI * Math.pow(radius, 2);
     }
 }

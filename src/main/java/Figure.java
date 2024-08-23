@@ -1,3 +1,5 @@
+import java.util.List;
+
 public abstract class Figure {
     private final double startX;
     private final double startY;
@@ -15,5 +17,13 @@ public abstract class Figure {
 
     public double getStartY() {
         return startY;
+    }
+
+    public static double sumAllAreas(List<Figure> figures) {
+        double res = 0;
+        for (Figure figure : figures) {
+            res += figure.getArea();
+        }
+        return res;
     }
 }

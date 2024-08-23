@@ -1,4 +1,4 @@
-public class Square extends Figure{
+public class Square extends Figure {
     private final double sideLength;
 
     public Square(double startX, double startY, double sideLength) {
@@ -8,6 +8,6 @@ public class Square extends Figure{
 
     @Override
     public double getArea() {
-        return Math.pow(sideLength,2);
+        return Math.pow(sideLength, 2);
     }
 }

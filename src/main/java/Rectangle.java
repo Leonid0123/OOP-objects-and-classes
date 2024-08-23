@@ -1,4 +1,4 @@
-public class Rectangle extends Figure{
+public class Rectangle extends Figure {
     private final double firstSide;
     private final double secondSide;
 
@@ -10,6 +10,6 @@ public class Rectangle extends Figure{
 
     @Override
     public double getArea() {
-        return firstSide*secondSide;
+        return firstSide * secondSide;
     }
 }
