@@ -1,4 +1,4 @@
-public class Sparrow extends Bird {
+public class Sparrow implements Birdable {
     @Override
     public void Sing() {
         System.out.println("чырык");

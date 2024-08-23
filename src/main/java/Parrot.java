@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Parrot extends Bird {
+public class Parrot implements Birdable {
     final private String textSing;
 
     public Parrot(String textSing) {
@@ -13,6 +13,6 @@ public class Parrot extends Bird {
         int max = textSing.length();
         Random rand = new Random();
         int count = rand.nextInt(max - min + 1) + min;
-        System.out.println(textSing.substring(0,count));
+        System.out.println(textSing.substring(0, count));
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Cuckoo extends Bird {
+public class Cuckoo implements Birdable {
     @Override
     public void Sing() {
         Random rand = new Random();
