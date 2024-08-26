@@ -1,3 +1,5 @@
+package ru.courses.main;
+
 import ru.courses.birds.*;
 import ru.courses.geometry.*;
 
