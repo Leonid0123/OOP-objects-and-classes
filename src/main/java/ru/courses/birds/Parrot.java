@@ -18,3 +18,4 @@ public class Parrot implements Birdable {
         System.out.println(textSing.substring(0, count));
     }
 }
+

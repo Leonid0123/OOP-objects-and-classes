@@ -45,5 +45,11 @@ public class Main {
 
         List<Birdable> setOfBirds = new ArrayList<>(List.of(sparrow, cuckoo, parrot));
         BirdOrchestrator.singAllBirds(setOfBirds);
+
+        //Практика ООП. Пакеты #4. Простые имена
+        Point point1 = new Point(1,2);
+        java.awt.Point point2 = new java.awt.Point(2,3);
+        System.out.println(point1);
+        System.out.println(point2);
     }
 }

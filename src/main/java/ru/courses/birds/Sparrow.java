@@ -6,3 +6,4 @@ public class Sparrow implements Birdable {
         System.out.println("чырык");
     }
 }
+
