@@ -1,3 +1,5 @@
+package ru.courses.company;
+
 public class Department {
     private final String name;
     private Employee boss;
@@ -20,7 +22,7 @@ public class Department {
             throw new IllegalArgumentException("Значение начальника отдела не может быть равным Null. Укажите корректное значение.");
     }
 
-    public void setBoss(Employee boss) {
+    void setBoss(Employee boss) {
         if (boss == null)
             throw new IllegalArgumentException("Значение начальника отдела не может быть равным Null. Укажите корректное значение.");
         else if (this.boss == null) {

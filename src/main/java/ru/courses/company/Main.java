@@ -1,3 +1,5 @@
+package ru.courses.company;
+
 public class Main {
     public static void main(String[] args) {
         //создание отдела с начальником. попытка изменить начальника отдела и попытка изменить отдел у начальника

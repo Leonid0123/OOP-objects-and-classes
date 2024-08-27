@@ -1,3 +1,5 @@
+package ru.courses.company;
+
 import java.util.Objects;
 
 public class Employee {
@@ -47,7 +49,7 @@ public class Employee {
         }
     }
 
-    private void setBossDepartment(Department department) {
+    void setBossDepartment(Department department) {
         this.department = department;
         this.isBoss = true;
     }
