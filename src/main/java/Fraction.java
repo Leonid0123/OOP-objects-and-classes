@@ -1,6 +1,8 @@
-public class Fraction {
-    private final int numerator; //числитель
-    private final int denominator; //знаменатель
+import java.util.Objects;
+
+public class Fraction implements Cloneable{
+    public int numerator; //числитель
+    public int denominator; //знаменатель
 
     public Fraction(int numerator, int denominator) { //добавить проверку на знаменатель > 0
         if (denominator <= 0) {
@@ -13,6 +15,24 @@ public class Fraction {
     @Override
     public String toString() {
         return numerator + "/" + denominator;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fraction fraction = (Fraction) o;
+        return numerator == fraction.numerator && denominator == fraction.denominator;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
+    }
+
+    @Override
+    protected Fraction clone() throws CloneNotSupportedException {
+            return (Fraction) super.clone();
     }
 
     public Fraction sum(Fraction f2) {
