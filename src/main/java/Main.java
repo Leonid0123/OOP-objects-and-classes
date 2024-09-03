@@ -1,11 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        Sauce habanero = new Sauce("Хабанеро", Spiciness.VERYHOT);
-        Sauce chipotle = new Sauce("Чипотле", Spiciness.HOT);
-        Sauce tartar = new Sauce("Тартар", Spiciness.NOTHOT);
-
-        System.out.println(habanero);
-        System.out.println(chipotle);
-        System.out.println(tartar);
+        System.out.println("1 + 3.3 = " + Operation.ADDITION.apply(1,3.3));
+        System.out.println("3 - 1.1 = " + Operation.SUBTRACTION.apply(3,1.1));
+        System.out.println("2.5 * 3 = " + Operation.MULTIPLY.apply(2.5,3));
+        System.out.println("3 / 2 = " + Operation.DIVIDE.apply(3,2));
     }
 }
