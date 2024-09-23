@@ -1,16 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> strings = new ArrayList<>(Arrays.asList("один", "два", "три", "четыре"));
-        Stream<String> stringStream = strings.stream();
-        System.out.println(getStringFromStream(stringStream));
+        ArrayList<Integer> strings = new ArrayList<>(Arrays.asList(1, 423, 5231, 34215));
+        printList(strings);
     }
 
-    public static String getStringFromStream(Stream<String> stringStream) {
-        return stringStream.map(n -> n + " ").collect(Collectors.joining());
+    public static void printList(ArrayList<Integer> list) {
+        list.forEach(i -> System.out.println(i));
     }
 }
