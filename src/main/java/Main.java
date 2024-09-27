@@ -1,38 +1,53 @@
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
+        Cat cat = new Cat("Vasya", 10, new ArrayList<>(Arrays.asList("Anton", "Oleg", "Igor")));
+        System.out.println(cat);
+        setFieldsToNull(cat);
+        System.out.println(cat);
 
-        Integer[] arr = new Integer[list.size()];
-        arr = list.toArray(arr);
-        reverse(list);
-        reverse(arr);
-        System.out.println(list);
-        System.out.println(Arrays.toString(arr));
+        Dog dog = new Dog("Rex");
+        System.out.println(dog);
+        setFieldsToNull(dog);
+        System.out.println(dog);
     }
 
-    public static void reverse(Integer[] intArray) {
-        int n = intArray.length - 1;
-        for (int i = 0; i < intArray.length / 2; i++) {
-            int temp = intArray[i];
-            intArray[i] = intArray[n - i];
-            intArray[n - i] = temp;
+    public static void setFieldsToNull(Object obj) {
+        Class aClass = obj.getClass();
+        for (Field field : aClass.getDeclaredFields()) {
+            field.setAccessible(true);
+            try {
+                if (field.getType().isPrimitive())
+                    setPrimitiveFieldToDefault(obj, field);
+                else
+                    field.set(obj, null);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public static void reverse(ArrayList<Integer> list) {
-        int n = list.size() - 1;
-        for (int i = 0; i < list.size() / 2; i++) {
-            int temp = list.get(i);
-            list.set(i,list.get(n-i));
-            list.set(n-i, temp);
+    private static void setPrimitiveFieldToDefault(Object obj, Field field) throws IllegalAccessException {
+        Class type = field.getType();
+        if (type.equals(boolean.class)) {
+            field.setBoolean(obj, false);
+        } else if (type.equals(byte.class)) {
+            field.setByte(obj, (byte) 0);
+        } else if (type.equals(char.class)) {
+            field.setChar(obj, '\u0000');
+        } else if (type.equals(short.class)) {
+            field.setShort(obj, (short) 0);
+        } else if (type.equals(int.class)) {
+            field.setInt(obj, 0);
+        } else if (type.equals(long.class)) {
+            field.setLong(obj, 0L);
+        } else if (type.equals(float.class)) {
+            field.setFloat(obj, 0.0f);
+        } else if (type.equals(double.class)) {
+            field.setDouble(obj, 0.0d);
         }
     }
 }
