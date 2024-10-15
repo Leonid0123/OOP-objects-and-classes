@@ -53,35 +53,12 @@ public class TestsAPI {
 
     @AfterEach
     public void clear() {
-        RestAssured.given()
-                .baseUri("http://localhost:8080/student/" + student1.getId())
-                .when()
-                .delete();
-
-        RestAssured.given()
-                .baseUri("http://localhost:8080/student/" + student2.getId())
-                .when()
-                .delete();
-
-        RestAssured.given()
-                .baseUri("http://localhost:8080/student/" + postStudent.getId())
-                .when()
-                .delete();
-
-        RestAssured.given()
-                .baseUri("http://localhost:8080/student/" + topStudent1.getId())
-                .when()
-                .delete();
-
-        RestAssured.given()
-                .baseUri("http://localhost:8080/student/" + topStudent2.getId())
-                .when()
-                .delete();
-
-        RestAssured.given()
-                .baseUri("http://localhost:8080/student/" + topStudentMaxMarks.getId())
-                .when()
-                .delete();
+        for (int i = 1; i <= 20; i++) { //удаление всех записей в БД, которые могли быть добавлены в процессе запуска тестового прогона
+            RestAssured.given()
+                    .baseUri("http://localhost:8080/student/" + i)
+                    .when()
+                    .delete();
+        }
     }
 
     @Test
@@ -106,7 +83,21 @@ public class TestsAPI {
                 .when()
                 .get()
                 .then()
-                .statusCode(404);
+                .statusCode(404)
+                .body(Matchers.equalTo(""));
+    }
+
+    @Test
+    public void getStudentWithEmptyDb() { //получение несуществующего студента при отсутствии студентов в БД
+        clear();
+        RestAssured.given()
+                .baseUri("http://localhost:8080/student/-1")
+                .param("id", "-1")
+                .when()
+                .get()
+                .then()
+                .statusCode(404)
+                .body(Matchers.equalTo(""));
     }
 
     @Test
