@@ -1,0 +1,103 @@
+2024-11-08 14:57:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "TABLE_CATALOG" не найден
+Column "TABLE_CATALOG" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
+	at Main.main(Main.java:26)
+2024-11-08 15:00:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "departmentID" не найден
+Column "departmentID" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at Main.main(Main.java:26)
+2024-11-08 15:02:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DepartmentID" не найден
+Column "DepartmentID" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at Main.main(Main.java:26)
+2024-11-08 15:02:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "TABLE_CATALOG" не найден
+Column "TABLE_CATALOG" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
+	at Main.main(Main.java:26)
+2024-11-08 15:03:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DepartmentID" не найден
+Column "DepartmentID" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at Main.main(Main.java:26)
+2024-11-08 15:57:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "Accounting"
+Data conversion error converting "Accounting" [22018-199]
+2024-11-08 15:57:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "Accounting"
+Data conversion error converting "Accounting" [22018-199]
+2024-11-08 16:08:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "Accounting"
+Data conversion error converting "Accounting" [22018-199]
+2024-11-08 16:08:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "Accounting"
+Data conversion error converting "Accounting" [22018-199]
+2024-11-08 16:10:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "Accounting"
+Data conversion error converting "Accounting" [22018-199]
+2024-11-08 16:11:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "Accounting"
+Data conversion error converting "Accounting" [22018-199]
+2024-11-08 16:12:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Метод разрешен только для запросов. Используйте execute или executeUpdate вместо executeQuery
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+UPDATE Employee SET DepartmentID = '3' WHERE ID = '2' [90002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:229)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:145)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:85)
+	at Main.main(Main.java:44)
+2024-11-08 22:11:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "EMPLOYEES" не найдена
+Table "EMPLOYEES" not found; SQL statement:
+UPDATE employees SET name = ? WHERE id = ? [42102-199]
+2024-11-09 02:08:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-199]
+2024-11-09 02:10:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-199]
+2024-11-09 02:10:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-199]
+2024-11-09 02:13:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-199]
